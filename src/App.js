@@ -6,17 +6,21 @@ import Favourites from "./components/Favourites";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { configureStore} from "./store";
 import { Provider } from "react-redux";
+import Header from "./components/Header";
 
 function App() {
-  return (
+  return ( 
+    
     <Provider store={configureStore}>
       <BrowserRouter>
-        <Routes>
+      <Header/>
+             <Routes>
           <Route path="/" element={<MainSearch />} />
           <Route path="/favourites" element={<Favourites />} />
           <Route path="/:companyName" element={<CompanySearchResults />} />
         </Routes>
       </BrowserRouter>
+     
     </Provider>
   );
 }

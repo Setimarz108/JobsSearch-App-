@@ -5,6 +5,7 @@ import uniqid from "uniqid";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchJobs } from "../store/actions";
+import Header from "./Header";
 
 const mapDispatchToProps = (dispatch) => ({
   fetchJobs: (baseEndpoint, query) => dispatch(fetchJobs(baseEndpoint, query)),
@@ -32,7 +33,7 @@ class MainSearch extends React.Component {
       <Container>
         <Row>
           <Col xs={10} className="mx-auto my-3">
-            <h1>Remote Jobs Search</h1>
+          
             <Link to="/favourites" className="btn btn-primary">
               Favourites
             </Link>
