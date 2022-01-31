@@ -4,6 +4,7 @@ import favouritesReducer from "./reducers/favourites";
 import jobsReducer from "./reducers/jobs";
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
+import {encryptTransform} from 'redux-persist-transform-encrypt'
 
 
 export const initialState = {
@@ -24,6 +25,15 @@ const mainReducer = combineReducers({
 const persistConfig = {
   key: 'root',
   storage,
+  transforms: [
+    encryptTransform({
+      secretKey: process.env.REACT_SECRET_KEY,
+      onerror: (error) => {
+          console.log('encryption error')
+      }
+
+    })
+  ]
 }
 
 const persistedReducer = persistReducer(persistConfig, mainReducer);
