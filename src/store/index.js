@@ -27,9 +27,9 @@ const persistConfig = {
   storage,
   transforms: [
     encryptTransform({
-      secretKey: process.env.REACT_SECRET_KEY,
+      secretKey: process.env.REACT_APP_KEY,
       onerror: (error) => {
-          console.log('encryption error')
+          console.log('encryption error', error)
       }
 
     })
