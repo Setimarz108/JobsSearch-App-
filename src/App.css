@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+}
+
+.job{
+  color: #fff;
+  background-color: #5865F2;
+  border: 1px solid gray;
+  border-radius: 10px,
+}
