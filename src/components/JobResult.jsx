@@ -27,39 +27,42 @@ function JobResult({
   };
 
   return (
-    <Row
+    <div 
       className="mx-0 mt-3 p-3"
       style={{
         color: "#fff",
         backgroundColor: "#5865F2",
         border: "1px solid gray",
-        borderRadius: "10px",
+        borderRadius:"10px",
+        width:"50%",
+       
       }}
     >
       <Col xs={3} className="d-flex">
         {isFav ? (
           <StarFill
-            color="white"
+            color="gold"
             size={16}
-            className="me-4 my-auto"
+            className=" mr-4 my-auto"
             onClick={toggleFavourite}
           />
         ) : (
           <Star
             color="gold"
             size={16}
-            className="me-4 my-auto"
+            className="mr-4 my-auto"
             onClick={toggleFavourite}
           />
         )}
-        <Link style={{color: 'white'}} to={`/${data.company_name}`}>{data.company_name}</Link>
+        <Link style={{color: 'white', fontSize:"30px", marginLeft:"10px", display: 'inline'}} to={`/${data.company_name}`}>{data.company_name}</Link>
       </Col>
+
       <Col xs={9}>
         <Link  style={{color: 'white'}} to={{ pathname: data.url }} target="_blank">
           {data.title}
         </Link>
       </Col>
-    </Row>
+    </div>
   );
 }
 

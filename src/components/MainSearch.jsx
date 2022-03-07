@@ -34,9 +34,7 @@ class MainSearch extends React.Component {
         <Row>
           <Col xs={10} className="mx-auto my-3">
           
-            <Link to="/favourites" className="btn btn-primary">
-              Favourites
-            </Link>
+            
           </Col>
           <Col xs={10} className="mx-auto">
             <Form onSubmit={this.handleSubmit}>
@@ -44,7 +42,7 @@ class MainSearch extends React.Component {
                 type="search"
                 value={this.state.query}
                 onChange={this.handleChange}
-                placeholder="type and press Enter" style={{
+                placeholder="what Job are you looking for?" style={{
                   color: "black",
                   backgroundColor: "white",
                   border: "1px solid gray",
